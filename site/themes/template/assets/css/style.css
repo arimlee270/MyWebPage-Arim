@@ -1487,3 +1487,18 @@ ul.experience-chart h4 {
     line-height: 1.8;
   }
 }
+
+.about-me-text {
+  display: block !important;
+  text-align: center;
+}
+
+.about-content {
+  width: 100%;
+  text-align: center;
+}
+
+.download-cv {
+  display: table;
+  margin: 24px auto 0;
+}
