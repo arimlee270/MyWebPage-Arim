@@ -20,3 +20,4 @@ package-lock.json
 **/resources/_gen/
 **/.hugo_build.lock
 /.github-pages-setup-backups/
+/public/
