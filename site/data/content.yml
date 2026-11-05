@@ -1,12 +1,10 @@
 ########################## hero area ##########################
 hero:
-  title: "I'm Burton Guster"
+  title: "Hi, I'm Arim Lee"
 
   # animated text loop
   occupations:
-    - 'Web Developer'
-    - 'Pharmaceutical Salesman'
-    - 'Private Detective'
+    - 'Computer Science & AI Undergraduate'
 
   # hero background image
   bg_image: 'images/background.jpg'
