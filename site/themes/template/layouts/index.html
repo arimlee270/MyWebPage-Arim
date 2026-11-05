@@ -10,15 +10,15 @@
     <div class="row about-me-holder">
       <div
         class="
-          col-lg-6 col-md-6 col-sm-6
+          col-lg-10 col-md-12 col-sm-12
           about-me-text
           d-flex
           align-self-center
         "
       >
-        <div class="text-holder">
-          <h1>{{ .title | safeHTML }}</h1>
-          <p>{{ .content | markdownify | emojify }}</p>
+        <div class="about-content">
+          {{ .content | markdownify | emojify }}
+        </div>
           {{ if .button.enable }} {{ with .button }}
           <a
             href="{{ .link | relURL }}"

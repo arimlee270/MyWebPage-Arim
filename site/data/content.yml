@@ -11,21 +11,53 @@ hero:
   # optional mobile breakpoint background
   mobile_bg_image: 'images/gus_small.jpg'
 
+
 ########################### About ##################################
+
 about:
   enable: true
-  image: 'images/profile.jpg'
-  title: 'THIS IS ME'
-  content: Hi, thank you for taking a look around my site. If you have any questions feel free to reach out on [LinkedIn, Github, or by email](#contact)!
+  image: ''
+  title: 'ABOUT ME'
+  content: |
+    **Information**
+
+    - 이름: 이아림
+    - 학교: 전북대학교
+    - 전공: 컴퓨터인공지능학부
+    - 학년: 3학년
+
+    **Research Interests**
+
+    - Brain–Computer Interfaces (BCI)
+    - Artificial Intelligence (AI)
+    - Human–AI Interaction
+
+    **Why BCI?**
+
+    Neuralink 관련 기술을 조사하면서 BCI에 관심을 갖게 되었습니다.
+    특히 뇌와 컴퓨터를 연결하여 신체적 제약을 극복하고
+    인간의 삶을 개선하는 기술에 흥미를 느끼고 있습니다.
+
+    **Learning Goals & Next Steps**
+
+    BCI와 인공지능 분야의 연구 문제와 접근 방법을
+    깊이 이해하는 것을 목표로 하고 있습니다.
+
+    이를 위해 관련 논문을 지속적으로 읽고 비교하며,
+    선행연구의 한계와 후속 연구 방향을 탐색하고 있습니다.
+
   button:
-    enable: true
-    label: 'DOWNLOAD MY RESUME'
-    link: #
-    icon: 'fa-download'
+    enable: false
+    label: ''
+    link: ''
+    icon: ''
+
+
+
 
 ###########################3 Experience ##############################
 experience:
-  enable: true
+  enable: false
   title: 'EXPERIENCE'
   experience_list:
     - name: Web Developer
@@ -45,7 +77,7 @@ experience:
 
 ############################### Skill #################################
 skill:
-  enable: true
+  enable: false
   title: 'SOME SKILLS'
   showpercent: false
   skill_list:
@@ -63,7 +95,7 @@ skill:
 
 ######################### funfacts #############################3
 funfacts:
-  enable: true
+  enable: false
   funfacts_list:
     - name: 'CUPS PER DAY'
       image: 'images/icons/coffee.png'

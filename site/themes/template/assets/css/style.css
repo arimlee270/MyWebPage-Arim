@@ -1385,3 +1385,105 @@ ul.experience-chart h4 {
 /*--------------------------------
   End Contact
 ----------------------------------*/
+
+/* =====================================
+   Custom About Me Layout
+===================================== */
+
+.about-me {
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 110px 24px 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-margin-top: 0;
+}
+
+.about-me > .container {
+  width: 100%;
+}
+
+.about-me-holder {
+  justify-content: center;
+}
+
+.about-me-text {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.about-me-text .text-holder {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.about-me-text h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Introduction, Research Interests 등 소제목 */
+
+.about-content strong {
+  display: block;
+  font-size: 19px;
+  font-weight: 700;
+  color: #333;
+  margin-top: 34px;
+  margin-bottom: 14px;
+}
+
+/* 본문 글씨와 줄 간격 */
+
+.about-content p {
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 12px;
+}
+
+/* 기본 정보 및 관심 분야 목록 */
+
+.about-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 auto 18px;
+  text-align: center;
+}
+
+.about-content li {
+  margin-bottom: 9px;
+  line-height: 1.8;
+}
+
+/* 모바일 화면 */
+
+@media (max-width: 767px) {
+  .about-me {
+    padding: 100px 18px 60px;
+  }
+
+  .about-me-text {
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+
+  .about-me-text h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  .about-content strong {
+    font-size: 17px;
+    margin-top: 28px;
+  }
+
+  .about-content p,
+  .about-content li {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+}
