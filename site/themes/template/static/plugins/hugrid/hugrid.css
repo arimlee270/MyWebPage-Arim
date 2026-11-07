@@ -12,8 +12,8 @@
 	vertical-align: top;
 }
 
-.og-grid li > a,
-.og-grid li > a img {
+.og-grid li > .og-card,
+.og-grid li > .og-card img {
 	border: none;
 	outline: none;
 	display: block;
@@ -21,7 +21,7 @@
   max-width: 100%;
 }
 
-.og-grid li.og-expanded > a::after {
+.og-grid li.og-expanded > .og-card::after {
 	top: auto;
 	border: solid transparent;
 	content: " ";

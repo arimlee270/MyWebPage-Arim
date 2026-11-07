@@ -28,6 +28,8 @@
   />
   {{ $reducedMotionStyles := resources.Get "css/reduced-motion.css" | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $reducedMotionStyles.RelPermalink }}" integrity="{{ $reducedMotionStyles.Data.Integrity }}" media="screen" />
+  {{ $portfolioCardStyles := resources.Get "css/portfolio-cards.css" | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $portfolioCardStyles.RelPermalink }}" integrity="{{ $portfolioCardStyles.Data.Integrity }}" media="screen" />
 
   {{ "<!--Favicon-->" | safeHTML }}
 

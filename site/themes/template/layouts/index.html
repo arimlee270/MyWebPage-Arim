@@ -135,8 +135,9 @@
             <div id="description-{{ $parsed_name | urlize }}" class="hidden">
               {{ .description | markdownify }}
             </div>
-            <a
-              href="{{ if .url }}{{ .url }}{{ else }}#portfolio{{ end }}"
+            <button
+              type="button"
+              class="og-card"
               data-largesrc="{{ $big_image.RelPermalink }}"
               data-title="{{ .name }}"
               data-github="{{ .github }}"
@@ -150,7 +151,7 @@
                 loading="lazy"
                 decoding="async"
               />
-            </a>
+            </button>
           </li>
           {{ end }}
         </ul>

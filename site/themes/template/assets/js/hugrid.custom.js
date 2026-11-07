@@ -210,7 +210,25 @@ var Grid = (function () {
 
   function initItemsEvents($items) {
     $items
-      .children('a')
+      .children('.og-card')
+      .on('keydown', function (event) {
+        if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') {
+          return;
+        }
+
+        var $visibleItems = $items.filter(':visible');
+        var currentIndex = $visibleItems.index($(this).parent());
+        var direction = event.key === 'ArrowRight' ? 1 : -1;
+        var nextIndex = Math.max(
+          0,
+          Math.min($visibleItems.length - 1, currentIndex + direction)
+        );
+
+        if (nextIndex !== currentIndex) {
+          $visibleItems.eq(nextIndex).children('.og-card').trigger('focus');
+          event.preventDefault();
+        }
+      })
       .on('click', function (e) {
         var $item = $(this).parent();
         current === Array.from($items).findIndex((d) => d == $item[0])
@@ -250,7 +268,7 @@ var Grid = (function () {
   function hidePreview(restoreFocus) {
     current = -1;
     var preview = $.data(this, 'preview');
-    var $focusTarget = preview.$item.children('a');
+    var $focusTarget = preview.$item.children('.og-card');
     preview.close();
     $.removeData(this, 'preview');
 
@@ -320,9 +338,8 @@ var Grid = (function () {
 
       current = this.$item.index();
 
-      var $itemEl = this.$item.children('a'),
+      var $itemEl = this.$item.children('.og-card'),
         eldata = {
-          href: $itemEl.attr('href'),
           largesrc: $itemEl.data('largesrc'),
           title: $itemEl.data('title'),
           description: this.$item.children('.hidden').html(),
@@ -352,7 +369,8 @@ var Grid = (function () {
           .on('load', function () {
             var $img = $(this);
             if (
-              $img.attr('src') === self.$item.children('a').data('largesrc')
+              $img.attr('src') ===
+              self.$item.children('.og-card').data('largesrc')
             ) {
               self.$loading.hide();
               self.$fullimage.find('img').remove();

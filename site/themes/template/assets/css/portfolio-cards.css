@@ -1,0 +1,49 @@
+.og-grid > li > .og-card {
+  appearance: none;
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  text-align: inherit;
+  cursor: pointer;
+  box-shadow: 0 5px 16px rgba(35, 39, 47, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.og-grid > li > .og-card img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 4px;
+}
+
+.og-grid > li:not(.og-expanded) > .og-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 22px rgba(35, 39, 47, 0.24);
+}
+
+.og-grid > li > .og-card:focus-visible {
+  outline: 3px solid #2459d3;
+  outline-offset: 4px;
+  z-index: 2;
+}
+
+html[data-theme='dark'] .og-grid > li > .og-card {
+  background: #242832;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.42);
+}
+
+html[data-theme='dark'] .og-grid > li:not(.og-expanded) > .og-card:hover {
+  box-shadow: 0 9px 24px rgba(0, 0, 0, 0.55);
+}
+
+html[data-theme='dark'] .og-grid > li > .og-card:focus-visible {
+  outline-color: #a9c7ff;
+}
