@@ -2120,3 +2120,15 @@ html[data-theme='dark'] .og-close:focus-visible {
   }
 
 }
+
+/* Visible keyboard focus for links and buttons across the site */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #2459d3;
+  outline-offset: 3px;
+}
+
+html[data-theme='dark'] a:focus-visible,
+html[data-theme='dark'] button:focus-visible {
+  outline-color: #a9c7ff;
+}
