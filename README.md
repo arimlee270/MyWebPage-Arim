@@ -15,14 +15,14 @@
   - **오픈소스 SW 아이디어 해커톤 캠프:** LLM 기반 감정 해소 서비스 기획 활동. `Competitions`에 표시됩니다.
   - **제주대학교 부트캠프:** 지도 기반 장소 검색·저장 및 채팅 앱 팀 프로젝트. `Projects`에 표시됩니다.
   - **Coming Soon:** 준비 중인 프로젝트 안내. `All`에서 확인할 수 있습니다.
-- **화면 및 키보드 조작:** 다크 모드 전환, 키보드로 메뉴와 프로젝트 카드 탐색, Enter로 상세 보기, 닫기 버튼 또는 Esc로 닫기를 지원합니다. 상세 창을 닫으면 포커스가 열었던 카드로 돌아갑니다. 카드와 모바일 메뉴 링크에는 키보드 포커스 표시가 있습니다.
+- **화면 및 키보드 조작:** 다크 모드 전환과 운영체제의 동작 줄이기 설정을 지원합니다. 마우스를 카드에 올리거나 Tab·좌우 화살표 키로 프로젝트 카드를 선택하고 Enter 또는 Space로 상세 내용을 엽니다. 닫기 버튼 또는 Esc로 닫으면 포커스가 열었던 카드로 돌아갑니다. 메뉴, 카드, 버튼에 키보드 포커스 표시가 있습니다.
 - **Footer:** GitHub, 뉴스레터, 이메일 주소 복사
 
 ## 사용 기술
 
 - **정적 사이트 생성:** Hugo. GitHub Actions 배포 워크플로는 Hugo Extended `0.167.0`을 설치합니다.
 - **템플릿 및 콘텐츠:** Hugo Go 템플릿, YAML (`site/data/content.yml`)
-- **스타일 및 상호작용:** CSS, JavaScript
+- **스타일 및 상호작용:** CSS, JavaScript, `prefers-reduced-motion` 설정 대응
 - **프런트엔드 라이브러리 및 외부 자산:** Bootstrap 4.5.2, jQuery 3.5.1, Waypoints 4.0.1, Font Awesome 5.10, Hover.css 2.1, Rubik 웹 폰트
 - **배포:** GitHub Actions와 GitHub Pages
 
@@ -60,8 +60,13 @@ hugo --minify --destination ../public
 │   ├── static/images/                 # 프로필, 배경, 로고 등 정적 이미지
 │   └── themes/template/
 │       ├── layouts/                   # 페이지 및 공통 레이아웃 템플릿
-│       ├── assets/css/style.css       # 사이트 스타일
-│       ├── assets/js/                 # 메뉴 및 프로젝트 상세보기 동작
+│       │   ├── index.html             # 메인 페이지 구성
+│       │   └── partials/scripts.html  # JavaScript 자산 로드
+│       ├── assets/
+│       │   ├── css/style.css          # 공통 사이트 스타일
+│       │   ├── css/portfolio-cards.css # 포트폴리오 카드 스타일
+│       │   ├── css/reduced-motion.css # 동작 줄이기 설정 대응
+│       │   └── js/script.js, hugrid.custom.js # 공통 동작 및 카드 기능
 │       └── static/plugins/            # Hugrid 및 텍스트 애니메이션 파일
 ├── LICENSE                            # MIT 라이선스
 └── README.md
