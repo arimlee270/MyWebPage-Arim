@@ -186,13 +186,13 @@ var Grid = (function () {
     initItemsEvents($items);
 
     $('#portfolio-preview').on('click', 'button.og-close', function () {
-      hidePreview();
+      hidePreview(true);
       return false;
     });
 
     $window.on('keydown', function (event) {
       if (event.key === 'Escape' && $.data(this, 'preview')) {
-        hidePreview();
+        hidePreview(true);
       }
     });
 
@@ -247,11 +247,18 @@ var Grid = (function () {
     preview.open();
   }
 
-  function hidePreview() {
+  function hidePreview(restoreFocus) {
     current = -1;
     var preview = $.data(this, 'preview');
+    var $focusTarget = preview.$item.children('a');
     preview.close();
     $.removeData(this, 'preview');
+
+    if (restoreFocus) {
+      window.setTimeout(function () {
+        $focusTarget.trigger('focus');
+      }, settings.speed + 50);
+    }
   }
 
   function Preview($item) {
