@@ -185,6 +185,12 @@ var Grid = (function () {
   function initEvents() {
     initItemsEvents($items);
 
+    $window.on('keydown', function (event) {
+      if (event.key === 'Escape' && $.data(this, 'preview')) {
+        hidePreview();
+      }
+    });
+
     $window.on('debouncedresize', function () {
       scrollExtra = 0;
       previewPos = -1;
