@@ -257,7 +257,7 @@ var Grid = (function () {
   Preview.prototype = {
     create: function () {
       this.$title = $('<h3></h3>');
-      this.$description = $('<p></p>');
+      this.$description = $('<div class="portfolio-description"></div>');
       this.$href = $(
         '<a href="#" class="button" target="_blank" rel="noreferrer">{{ .Site.Params.buttontext }}</a>'
       );
@@ -273,7 +273,6 @@ var Grid = (function () {
       this.$closePreview = $('<span class="og-close"></span>');
       this.$previewInner = $('<div class="og-expander-inner"></div>').append(
         this.$closePreview,
-        this.$fullimage,
         this.$details
       );
       this.$previewEl = $('<div class="og-expander"></div>').append(
