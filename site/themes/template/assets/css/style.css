@@ -2087,6 +2087,25 @@ html[data-theme='dark'] .portfolio-carousel {
 
 }
 
+/* Keyboard focus indicators for links hidden by the global outline reset */
+.og-grid > li > a:focus-visible {
+  outline: 3px solid #2459d3;
+  outline-offset: 4px;
+  z-index: 2;
+}
+
+.mobile-menu-list a:focus-visible {
+  display: inline-block;
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+html[data-theme='dark'] .og-grid > li > a:focus-visible,
+html[data-theme='dark'] .og-close:focus-visible {
+  outline-color: #a9c7ff;
+}
+
 @media screen and (max-width: 650px) {
   .portfolio-heading {
     flex-wrap: wrap;
