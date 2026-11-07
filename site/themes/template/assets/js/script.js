@@ -65,6 +65,8 @@
       // Remove links that don't actually link to anything
       .not('[href="#"]')
       .not('[href="#0"]')
+      // Portfolio cards open inline details; their #portfolio href is a fallback.
+      .not('.og-grid > li > a')
       .on('click', function (event) {
         // On-page links
         if (
