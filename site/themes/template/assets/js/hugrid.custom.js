@@ -432,6 +432,41 @@ var Grid = (function () {
   };
 })();
 $(function () {
+  var $themeToggle = $('#theme-toggle');
+  var savedTheme = null;
+  try {
+    savedTheme = window.localStorage.getItem('portfolio-theme');
+  } catch (error) {
+    // The toggle still works for this page if browser storage is unavailable.
+  }
+  var applyTheme = function (theme) {
+    var isDark = theme === 'dark';
+    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+    $themeToggle.attr('aria-pressed', String(isDark));
+    $themeToggle.attr(
+      'aria-label',
+      isDark ? '밝은 모드로 전환' : '다크 모드로 전환'
+    );
+    $themeToggle.attr(
+      'title',
+      isDark ? '밝은 모드로 전환' : '다크 모드로 전환'
+    );
+  };
+
+  applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
+  $themeToggle.on('click', function () {
+    var nextTheme =
+      document.documentElement.getAttribute('data-theme') === 'dark'
+        ? 'light'
+        : 'dark';
+    try {
+      window.localStorage.setItem('portfolio-theme', nextTheme);
+    } catch (error) {
+      // Keep the selected theme for this page if browser storage is unavailable.
+    }
+    applyTheme(nextTheme);
+  });
+
   var $portfolioCarousel = $('.portfolio-carousel');
   var resetPortfolioCarousel = function () {
     $portfolioCarousel.scrollLeft(0);

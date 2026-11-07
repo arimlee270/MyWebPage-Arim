@@ -1858,6 +1858,207 @@ ul.experience-chart h4 {
   width: 100%;
 }
 
+/* Dark mode and accessible theme switch */
+html[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+html[data-theme='dark'] body,
+html[data-theme='dark'] .about-me,
+html[data-theme='dark'] .portfolio {
+  background-color: #171a20;
+  color: #e6e8ec;
+}
+
+html[data-theme='dark'] .menu-container,
+html[data-theme='dark'] .mobile-menu {
+  background: #171a20;
+}
+
+html[data-theme='dark'] .mobile-menu {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme='dark'] .desktop-menu .menu-item a,
+html[data-theme='dark'] .menu-item-transparent.menu-item a,
+html[data-theme='dark'] .about-me-text h1,
+html[data-theme='dark'] .about-me-text p,
+html[data-theme='dark'] .about-content p,
+html[data-theme='dark'] .about-content li,
+html[data-theme='dark'] .experience h2,
+html[data-theme='dark'] .skill h2,
+html[data-theme='dark'] .experience h3,
+html[data-theme='dark'] .skill h3,
+html[data-theme='dark'] .experience-chart li span,
+html[data-theme='dark'] .experience-chart li p,
+html[data-theme='dark'] .experience-chart h4,
+html[data-theme='dark'] .skillbar-title,
+html[data-theme='dark'] .skill-bar-percent,
+html[data-theme='dark'] .portfolio h1,
+html[data-theme='dark'] .portfolio-heading h2,
+html[data-theme='dark'] .footer,
+html[data-theme='dark'] .footer-copy-email,
+html[data-theme='dark'] .email-copy-status,
+html[data-theme='dark'] .credit {
+  color: #e6e8ec;
+}
+
+html[data-theme='dark'] .about-content strong,
+html[data-theme='dark'] .og-details > h3,
+html[data-theme='dark'] .og-details .portfolio-description h3,
+html[data-theme='dark'] .og-details .portfolio-description strong {
+  color: #f3f4f6;
+}
+
+html[data-theme='dark'] .menu-slider,
+html[data-theme='dark'] .og-expander {
+  background: #20242c;
+}
+
+html[data-theme='dark'] .og-details .portfolio-description > p:first-child,
+html[data-theme='dark'] .og-details .portfolio-description p,
+html[data-theme='dark'] .og-details .portfolio-description li {
+  color: #d2d6dd;
+}
+
+html[data-theme='dark'] .og-grid > li > a {
+  background: #242832;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.42);
+}
+
+html[data-theme='dark'] .og-grid > li:not(.og-expanded) > a:hover {
+  box-shadow: 0 9px 24px rgba(0, 0, 0, 0.55);
+}
+
+html[data-theme='dark'] .portfolio-filter {
+  color: #aeb4bf;
+}
+
+html[data-theme='dark'] .portfolio-filter:hover,
+html[data-theme='dark'] .portfolio-filter.is-active {
+  color: #fff;
+}
+
+html[data-theme='dark'] .button {
+  color: #e6e8ec;
+  border-color: #c4c9d1;
+}
+
+html[data-theme='dark'] .button:hover {
+  background: #414854;
+  border-color: #414854;
+}
+
+html[data-theme='dark'] .footer-icons .fa,
+html[data-theme='dark'] .to-top .fa {
+  background: #e6e8ec;
+}
+
+html[data-theme='dark'] .footer-icons a,
+html[data-theme='dark'] .to-top a {
+  color: #e6e8ec;
+}
+
+html[data-theme='dark'] .footer-icon:hover {
+  color: #a9c7ff;
+}
+
+html[data-theme='dark'] .skillbar {
+  background: #252a33;
+  border-color: #aeb4bf;
+}
+
+html[data-theme='dark'] .skillbar-bar {
+  background: #d2d6dd;
+}
+
+html[data-theme='dark'] .experience-chart li {
+  border-left-color: #8e96a3;
+}
+
+html[data-theme='dark'] ul.experience-chart li:after {
+  background: #171a20;
+  border-color: #c4c9d1;
+}
+
+html[data-theme='dark'] ul.experience-chart li:hover:after {
+  background: #c4c9d1;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 10px;
+  right: 22px;
+  z-index: 1002;
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border: 1px solid rgba(120, 128, 140, 0.55);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94);
+  color: #343a44;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.theme-toggle-moon,
+html[data-theme='dark'] .theme-toggle-sun {
+  display: none;
+}
+
+html[data-theme='dark'] .theme-toggle {
+  background: #282e38;
+  border-color: #535c6a;
+  color: #f5d778;
+}
+
+html[data-theme='dark'] .theme-toggle-moon {
+  display: block;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid #6d9eff;
+  outline-offset: 3px;
+}
+
+html[data-theme='dark'] .mobile-menu-logo img {
+  filter: brightness(0) invert(1);
+}
+
+html[data-theme='dark'] .mobile-menu-nav span {
+  background: #e6e8ec;
+}
+
+html[data-theme='dark'] .portfolio-carousel {
+  scrollbar-color: #697282 #252a33;
+}
+
+@media (max-width: 765px) {
+  .theme-toggle {
+    top: 9px;
+    right: 62px;
+    width: 36px;
+    height: 36px;
+  }
+}
+
 .og-grid > li > a img {
   display: block;
   width: 100%;
