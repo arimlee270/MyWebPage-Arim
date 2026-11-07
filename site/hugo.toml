@@ -10,7 +10,7 @@ theme = "template"
 [[params.plugins.css]]
 link = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
 [[params.plugins.css]]
-link = "https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+link = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
 [[params.plugins.css]]
 link = "https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.0/css/hover-min.css"
 [[params.plugins.css]]
