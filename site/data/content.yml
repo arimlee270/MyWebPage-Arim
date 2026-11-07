@@ -112,7 +112,7 @@ portfolio:
   title: 'MY WORK'
   portfolio_list:
     - name: TastyTrip
-      image: 'images/portfolio/hugo.png'
+      image: 'images/portfolio/tastytrip.png'
       url: ''
       github: 'https://github.com/arimlee270/tastytrip'
       demo: 'https://tastytrip.onrender.com'
