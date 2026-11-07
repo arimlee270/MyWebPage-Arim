@@ -1044,6 +1044,22 @@ ul.experience-chart h4 {
   transform: translateY(5px);
 }
 
+.footer-copy-email {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #313131;
+  cursor: pointer;
+}
+
+.email-copy-status {
+  display: block;
+  min-height: 20px;
+  margin-top: 8px;
+  color: #6f6f6f;
+  font-size: 14px;
+}
+
 .no-js .to-top {
   position: fixed;
   right: 15px;

@@ -53,6 +53,7 @@ weight = 3
 #################### default parameters ################################
 [params]
 copyright = "Copyright Burton Guster &copy;"
+email = "arimlee270@gmail.com"
 # Meta data
 description = "Personal Portfolio"
 author = "Burton Guster"
@@ -70,19 +71,18 @@ preloader = "images/preloader.gif" # use jpg, png, svg or gif format.
 
 [[params.social]]
 icon = "fab fa-github"
-link = "https://github.com/tylersayshi"
+alt = "GitHub"
+link = "https://github.com/arimlee270"
 
 [[params.social]]
-icon = "fab fa-linkedin"
-link = "https://www.linkedin.com/"
+icon = "fas fa-newspaper"
+alt = "Newsletter"
+link = "https://almdispatch.stibee.com/?stb_source=url&stb_campaign=share_pageMain"
 
 [[params.social]]
 icon = "fas fa-envelope"
-link = "mailto:guster@burton.com"
-
-[[params.social]]
-icon = "fab fa-medium"
-link = "https://medium.com/@gusburton"
+alt = "Email"
+link = ""
 
 contentDir = "content/english"
 weight = 1

@@ -1,15 +1,52 @@
 <div class="footer container text-center" id="contact">
   <ul class="footer-icons list-inline">
     {{ range $.Site.Params.social }}
+    {{ if .link }}
       <li>
         <a href="{{ .link | safeURL }}" target="_blank" rel="noreferrer"
-          ><i class="{{ .icon }} footer-icon fa-3x" aria-label="{{ .alt }}"></i
+          ><i class="{{ .icon }} footer-icon fa-3x" aria-label="{{ .alt }}" title="{{ .alt }}"></i
         ></a>
       </li>
+    {{ else if and (eq .alt "Email") $.Site.Params.email }}
+      <li>
+        <button type="button" class="footer-copy-email" data-email="{{ $.Site.Params.email }}" aria-label="이메일 주소 복사" title="이메일 주소 복사">
+          <i class="{{ .icon }} footer-icon fa-3x" aria-hidden="true"></i>
+        </button>
+      </li>
+    {{ end }}
     {{ end }}
   </ul>
+  <span id="email-copy-status" class="email-copy-status" role="status" aria-live="polite"></span>
   <div class="credit">
     {{ $.Site.Params.copyright | markdownify }}
     <span id="current-year"></span>
   </div>
 </div>
+
+<script>
+  document.addEventListener('click', async function (event) {
+    const button = event.target.closest('.footer-copy-email');
+    if (!button) return;
+
+    const email = button.dataset.email;
+    const status = document.getElementById('email-copy-status');
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(email);
+      } else {
+        const field = document.createElement('textarea');
+        field.value = email;
+        field.style.position = 'fixed';
+        field.style.opacity = '0';
+        document.body.appendChild(field);
+        field.select();
+        const copied = document.execCommand('copy');
+        field.remove();
+        if (!copied) throw new Error('Clipboard copy failed');
+      }
+      status.textContent = '이메일 주소를 복사했어요.';
+    } catch (error) {
+      status.textContent = '이메일 주소를 복사하지 못했어요.';
+    }
+  });
+</script>
