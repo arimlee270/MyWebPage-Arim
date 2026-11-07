@@ -1643,7 +1643,7 @@ ul.experience-chart h4 {
 .og-expander-inner {
   box-sizing: border-box;
   height: 100%;
-  padding: 42px clamp(24px, 7vw, 100px);
+  padding: 42px clamp(24px, 7vw, 100px) 60px;
 }
 
 .og-expander .og-fullimg {
@@ -1735,7 +1735,7 @@ ul.experience-chart h4 {
 
 @media screen and (max-width: 650px) {
   .og-expander-inner {
-    padding: 52px 22px 24px;
+    padding: 52px 22px 36px;
   }
 
   .og-details {
