@@ -211,6 +211,17 @@ var Grid = (function () {
   function initItemsEvents($items) {
     $items
       .children('.og-card')
+      .on('mouseenter', function () {
+        if (document.activeElement === this) {
+          return;
+        }
+
+        try {
+          this.focus({ preventScroll: true });
+        } catch (error) {
+          this.focus();
+        }
+      })
       .on('keydown', function (event) {
         if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') {
           return;
