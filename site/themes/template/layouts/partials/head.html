@@ -19,8 +19,13 @@
 
   {{ "<!-- Main Stylesheet -->" | safeHTML }}
 
-  {{ $styles := resources.Get "css/style.css" }}
-  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen" />
+  {{ $styles := resources.Get "css/style.css" | resources.Fingerprint }}
+  <link
+    rel="stylesheet"
+    href="{{ $styles.RelPermalink }}"
+    integrity="{{ $styles.Data.Integrity }}"
+    media="screen"
+  />
 
   {{ "<!--Favicon-->" | safeHTML }}
 
