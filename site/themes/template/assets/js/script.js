@@ -194,6 +194,13 @@
     $(this).toggleClass('active').attr('aria-expanded', isOpen);
     $('.menu-slider').slideToggle(500);
   });
+
+  $('.mobile-menu-list a').on('click', function () {
+    var $menuToggle = $('.mobile-menu button.menu-link');
+    if ($menuToggle.hasClass('active')) {
+      $menuToggle.trigger('click');
+    }
+  });
   /*--------------------------------
 			 End Menu
 	----------------------------------*/
