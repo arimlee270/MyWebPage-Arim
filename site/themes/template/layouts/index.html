@@ -106,8 +106,14 @@
 <section class="portfolio" id="portfolio">
   <div class="container-fluid text-center">
     <div class="row portfolio-holder text-left">
-      <div class="col-12 text-center">
+      <div class="col-12 portfolio-heading">
         <h2>{{ .title }}</h2>
+        <div class="portfolio-filters" role="group" aria-label="Portfolio categories">
+          <button type="button" class="portfolio-filter is-active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="portfolio-filter" data-filter="projects" aria-pressed="false">Projects</button>
+          <button type="button" class="portfolio-filter" data-filter="research" aria-pressed="false">Research</button>
+          <button type="button" class="portfolio-filter" data-filter="competitions" aria-pressed="false">Competitions</button>
+        </div>
       </div>
       <div
         class="portfolio-carousel"
@@ -119,7 +125,7 @@
           {{ range .portfolio_list }} {{ $image := resources.Get .image }} {{
           $big_image := $image.Fill "780x500 jpg" }} {{ $sm_image := $image.Fill
           "395x250 jpg" }} {{ $parsed_name := replace .name "." "" }}
-          <li>
+          <li data-categories="{{ with .categories }}{{ delimit . " " }}{{ end }}">
             <div id="description-{{ $parsed_name | urlize }}" class="hidden">
               {{ .description | markdownify }}
             </div>

@@ -1763,6 +1763,54 @@ ul.experience-chart h4 {
   }
 }
 
+.portfolio-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 28px;
+  padding: 0 24px 12px;
+}
+
+.portfolio-heading h2 {
+  margin: 0;
+  text-align: left;
+}
+
+.portfolio-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 18px;
+}
+
+.portfolio-filter {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #999;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.portfolio-filter:hover,
+.portfolio-filter.is-active {
+  color: #4d4d4d;
+}
+
+.portfolio-filter.is-active {
+  font-weight: 600;
+}
+
+.portfolio-filter:focus-visible {
+  outline: 2px solid #6f6f6f;
+  outline-offset: 4px;
+}
+
+.og-grid > li.portfolio-filter-hidden {
+  display: none !important;
+}
+
 /* Horizontally scrollable portfolio cards */
 .portfolio-carousel {
   --portfolio-gap: 24px;
@@ -1839,6 +1887,15 @@ ul.experience-chart h4 {
 }
 
 @media screen and (max-width: 650px) {
+  .portfolio-heading {
+    flex-wrap: wrap;
+    gap: 10px 18px;
+  }
+
+  .portfolio-filters {
+    gap: 14px;
+  }
+
   .og-grid > li {
     flex-basis: 100%;
     scroll-snap-align: start;

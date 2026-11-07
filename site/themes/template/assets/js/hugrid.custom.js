@@ -442,5 +442,39 @@ $(function () {
   $('#desktop-menu a[href="#portfolio"], .mobile-menu-list a[href="#portfolio"]')
     .on('click', resetPortfolioCarousel);
 
+  var applyPortfolioFilter = function (filter, $button) {
+    $('.portfolio-filter').removeClass('is-active').attr('aria-pressed', 'false');
+    $button.addClass('is-active').attr('aria-pressed', 'true');
+
+    $('#og-grid > li').each(function () {
+      var $item = $(this);
+      var categories = ($item.attr('data-categories') || '').split(/\s+/);
+      var visible = filter === 'all' || categories.includes(filter);
+      $item.toggleClass('portfolio-filter-hidden', !visible);
+    });
+
+    resetPortfolioCarousel();
+    $('#og-grid > li:not(.portfolio-filter-hidden)').each(function () {
+      var $item = $(this);
+      $item.data({ offsetTop: $item.offset().top, height: $item.height() });
+    });
+  };
+
+  $('.portfolio-filter').on('click', function () {
+    var $button = $(this);
+    var filter = $button.data('filter');
+    var $openPreview = $('#portfolio-preview .og-expander');
+
+    if ($openPreview.length) {
+      $('#portfolio-preview .og-close').trigger('click');
+      window.setTimeout(function () {
+        applyPortfolioFilter(filter, $button);
+      }, 400);
+      return;
+    }
+
+    applyPortfolioFilter(filter, $button);
+  });
+
   Grid.init();
 });

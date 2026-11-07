@@ -110,6 +110,7 @@ portfolio:
   title: 'MY WORK'
   portfolio_list:
     - name: TastyTrip
+      categories: [projects, competitions]
       image: 'images/portfolio/tastytrip.png'
       url: ''
       github: 'https://github.com/arimlee270/tastytrip'
@@ -178,6 +179,7 @@ portfolio:
         향후에는 다양한 메뉴와 식당 데이터를 활용하여 분석 정확도와 추천 품질을 검증하고, 식단 제한 조건에 대한 정보의 신뢰성을 높이는 방향으로 개선하고자 합니다.
 
     - name: RAI LAB
+      categories: [research]
       image: 'images/portfolio/railab.png'
       url: ''
       description: |
@@ -209,6 +211,7 @@ portfolio:
         앞으로 다양한 선행연구를 비교·분석하며 관심 분야에 대한 이해를 넓히고, 구체적인 연구 주제를 선정하고자 합니다.
 
     - name: 오픈소스 SW 아이디어 해커톤 캠프
+      categories: [competitions]
       image: 'images/portfolio/open-source-sw-hackathon.png'
       url: ''
       description: |
@@ -232,6 +235,7 @@ portfolio:
         교내 오픈소스 SW 아이디어 해커톤 캠프에서 우수상을 수상했습니다.
 
     - name: 제주대학교 부트캠프
+      categories: [projects]
       image: 'images/portfolio/jeju-university-bootcamp.png'
       url: ''
       description: |
