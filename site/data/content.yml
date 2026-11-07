@@ -179,10 +179,11 @@ portfolio:
 
         향후에는 다양한 메뉴와 식당 데이터를 활용하여 분석 정확도와 추천 품질을 검증하고, 식단 제한 조건에 대한 정보의 신뢰성을 높이는 방향으로 개선하고자 합니다.
 
-    - name: Hugo Themes
-      image: 'images/portfolio/hugothemes.png'
-      url: https://gohugo.io
-      description: Commodo non mollit commodo esse. Quis ad Lorem eiusmod ad velit Lorem sint elit. Anim magna duis et duis pariatur eiusmod laboris esse. Sit duis labore sit esse enim laborum nisi sunt magna sint labore tempor. Sit sit sint eu laboris officia et sunt consequat sit excepteur nostrud eu. Fugiat aliqua id et pariatur quis commodo aute aliqua et magna officia eu cillum mollit. Sint culpa excepteur culpa culpa sint est eu dolore culpa duis adipisicing proident.
+    - name: RAI LAB
+      image: 'images/portfolio/railab.png'
+      url: ''
+      description: >-
+        RAI LAB에서 학부 연구 활동을 이어가며 BCI와 인간-AI 상호작용 분야에 대한 관심을 구체화하고 있습니다. 관련 주제를 탐색하고 연구에 필요한 기초 지식과 경험을 쌓고 있습니다.
 
     - name: Just A Design
       image: 'images/portfolio/design.png'
