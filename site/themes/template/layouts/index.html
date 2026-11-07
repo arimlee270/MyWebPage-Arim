@@ -109,29 +109,37 @@
       <div class="col-12 text-center">
         <h2>{{ .title }}</h2>
       </div>
-      <ul id="og-grid" class="og-grid">
-        {{ range .portfolio_list }} {{ $image := resources.Get .image }} {{
-        $big_image := $image.Fill "780x500 jpg" }} {{ $sm_image := $image.Fill
-        "395x250 jpg" }} {{ $parsed_name := replace .name "." "" }}
-        <li>
-          <div id="description-{{ $parsed_name | urlize }}" class="hidden">
-            {{ .description | markdownify }}
-          </div>
-          <a
-            href="{{ if .url }}{{ .url }}{{ else }}#portfolio{{ end }}"
-            data-largesrc="{{ $big_image.RelPermalink }}"
-            data-title="{{ .name }}"
-            data-github="{{ .github }}"
-            data-demo="{{ .demo | default .url }}"
-          >
-            <img
-              src="{{ $sm_image.RelPermalink }}"
-              alt="{{ $parsed_name }} image"
-            />
-          </a>
-        </li>
-        {{ end }}
-      </ul>
+      <div
+        class="portfolio-carousel"
+        role="region"
+        aria-label="Portfolio projects"
+        tabindex="0"
+      >
+        <ul id="og-grid" class="og-grid">
+          {{ range .portfolio_list }} {{ $image := resources.Get .image }} {{
+          $big_image := $image.Fill "780x500 jpg" }} {{ $sm_image := $image.Fill
+          "395x250 jpg" }} {{ $parsed_name := replace .name "." "" }}
+          <li>
+            <div id="description-{{ $parsed_name | urlize }}" class="hidden">
+              {{ .description | markdownify }}
+            </div>
+            <a
+              href="{{ if .url }}{{ .url }}{{ else }}#portfolio{{ end }}"
+              data-largesrc="{{ $big_image.RelPermalink }}"
+              data-title="{{ .name }}"
+              data-github="{{ .github }}"
+              data-demo="{{ .demo | default .url }}"
+            >
+              <img
+                src="{{ $sm_image.RelPermalink }}"
+                alt="{{ $parsed_name }} image"
+              />
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      <div id="portfolio-preview"></div>
     </div>
   </div>
 </section>

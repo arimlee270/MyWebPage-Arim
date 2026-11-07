@@ -185,6 +185,11 @@ var Grid = (function () {
   function initEvents() {
     initItemsEvents($items);
 
+    $('#portfolio-preview').on('click', 'button.og-close', function () {
+      hidePreview();
+      return false;
+    });
+
     $window.on('keydown', function (event) {
       if (event.key === 'Escape' && $.data(this, 'preview')) {
         hidePreview();
@@ -205,10 +210,6 @@ var Grid = (function () {
 
   function initItemsEvents($items) {
     $items
-      .on('click', 'button.og-close', function () {
-        hidePreview();
-        return false;
-      })
       .children('a')
       .on('click', function (e) {
         var $item = $(this).parent();
@@ -293,7 +294,7 @@ var Grid = (function () {
       this.$previewEl = $('<div class="og-expander"></div>').append(
         this.$previewInner
       );
-      this.$item.append(this.getEl());
+      $('#portfolio-preview').append(this.getEl());
       if (support) {
         this.setTransition();
       }
@@ -389,7 +390,7 @@ var Grid = (function () {
       var self = this,
         onEndFn = function () {
           if (support) {
-            $(this).off(transEndEventName);
+            self.$previewEl.off(transEndEventName);
           }
           self.$item.removeClass('og-expanded');
           self.$previewEl.remove();
@@ -401,10 +402,7 @@ var Grid = (function () {
             this.$largeImg.fadeOut('fast');
           }
           this.$previewEl.css('height', 0);
-          var $expandedItem = $items.eq(this.expandedIdx);
-          $expandedItem
-            .css('height', $expandedItem.data('height'))
-            .on(transEndEventName, onEndFn);
+          this.$previewEl.on(transEndEventName, onEndFn);
 
           if (!support) {
             onEndFn.call();
@@ -416,48 +414,16 @@ var Grid = (function () {
       return false;
     },
     calcHeight: function () {
-      var heightPreview =
-          winsize.height - this.$item.data('height') - marginExpanded,
-        itemHeight = winsize.height;
-
-      if (heightPreview < settings.minHeight) {
-        heightPreview = settings.minHeight;
-        itemHeight =
-          settings.minHeight + this.$item.data('height') + marginExpanded;
-      }
-
-      this.height = heightPreview;
-      this.itemHeight = itemHeight;
+      this.height = Math.max(settings.minHeight, winsize.height - marginExpanded);
     },
     setHeights: function () {
-      var self = this,
-        onEndFn = function () {
-          if (support) {
-            self.$item.off(transEndEventName);
-          }
-          self.$item.addClass('og-expanded');
-        };
-
       this.calcHeight();
       this.$previewEl.css('height', this.height);
-      this.$item.css('height', this.itemHeight).on(transEndEventName, onEndFn);
-
-      if (!support) {
-        onEndFn.call();
-      }
+      this.$item.addClass('og-expanded');
     },
     positionPreview: function () {
-      var position = this.$item.data('offsetTop'),
-        previewOffsetT = this.$previewEl.offset().top - scrollExtra,
-        scrollVal =
-          this.height + this.$item.data('height') + marginExpanded <=
-          winsize.height
-            ? position
-            : this.height < winsize.height
-            ? previewOffsetT - (winsize.height - this.height)
-            : previewOffsetT;
-
-      $body.animate({ scrollTop: scrollVal }, settings.speed);
+      var previewOffsetT = this.$previewEl.offset().top - scrollExtra;
+      $body.stop().animate({ scrollTop: previewOffsetT - 55 }, settings.speed);
     },
     setTransition: function () {
       this.$previewEl.css(

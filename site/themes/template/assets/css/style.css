@@ -1756,3 +1756,69 @@ ul.experience-chart h4 {
     font-size: 15px;
   }
 }
+
+/* Horizontally scrollable portfolio cards */
+.portfolio-carousel {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #999 #eee;
+  padding: 0 12px 14px;
+}
+
+.portfolio-carousel:focus-visible {
+  outline: 2px solid #6f6f6f;
+  outline-offset: 3px;
+}
+
+.og-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 18px;
+  width: 100%;
+  padding: 20px 0;
+  margin: 0;
+  text-align: left;
+}
+
+.og-grid > li {
+  flex: 0 0 calc((100% - 36px) / 3);
+  min-width: 0;
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+.og-grid > li.og-expanded > a::after {
+  display: none;
+}
+
+#portfolio-preview {
+  width: 100%;
+}
+
+#portfolio-preview .og-expander {
+  position: relative;
+  top: auto;
+  left: auto;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 991px) {
+  .og-grid > li {
+    flex-basis: calc((100% - 18px) / 2);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .portfolio-carousel {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .og-grid > li {
+    flex-basis: 100%;
+  }
+}
