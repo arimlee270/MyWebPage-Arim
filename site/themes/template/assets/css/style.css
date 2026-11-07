@@ -1471,7 +1471,8 @@ ul.experience-chart h4 {
   text-align: left;
 }
 
-.about-content strong {
+.about-content > h2,
+.about-content > h3 {
   display: block;
   font-size: 20px;
   font-weight: 700;
@@ -1480,7 +1481,7 @@ ul.experience-chart h4 {
   margin-bottom: 12px;
 }
 
-.about-top .about-content > p:first-child strong {
+.about-top .about-content > h2:first-child {
   color: #6f6f6f;
   font-size: 34px;
   letter-spacing: 2px;
@@ -1550,16 +1551,12 @@ ul.experience-chart h4 {
   margin-bottom: 0;
 }
 
-.about-detail-section > p:first-child {
-  text-align: center;
-  margin-bottom: 8px;
-}
-
-.about-detail-section > p:first-child strong {
+.about-detail-section > h3:first-child {
   color: #6f6f6f;
   font-size: 24px;
   letter-spacing: 1px;
-  margin: 0;
+  margin: 0 0 8px;
+  text-align: center;
 }
 
 .about-detail-section p,
@@ -1602,7 +1599,7 @@ ul.experience-chart h4 {
     margin-bottom: 8px;
   }
 
-  .about-top .about-content > p:first-child strong {
+  .about-top .about-content > h2:first-child {
     font-size: 30px;
   }
 
@@ -1629,7 +1626,7 @@ ul.experience-chart h4 {
     margin-bottom: 30px;
   }
 
-  .about-detail-section > p:first-child strong {
+  .about-detail-section > h3:first-child {
     font-size: 20px;
   }
 
@@ -1903,7 +1900,8 @@ html[data-theme='dark'] .credit {
   color: #e6e8ec;
 }
 
-html[data-theme='dark'] .about-content strong,
+html[data-theme='dark'] .about-content > h2,
+html[data-theme='dark'] .about-content > h3,
 html[data-theme='dark'] .og-details > h3,
 html[data-theme='dark'] .og-details .portfolio-description h3,
 html[data-theme='dark'] .og-details .portfolio-description strong {
