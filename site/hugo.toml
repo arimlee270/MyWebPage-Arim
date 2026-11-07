@@ -1,6 +1,6 @@
 ######################## default configuration ####################
-baseURL = "https://example.com"
-title = "Port Hugo"
+baseURL = "https://arimlee270.github.io/MyWebPage-Arim/"
+title = "Arim Lee | Portfolio"
 theme = "template"
 
 
@@ -52,13 +52,12 @@ weight = 3
 
 #################### default parameters ################################
 [params]
-copyright = "Copyright Burton Guster &copy;"
+copyright = "Copyright Arim Lee &copy;"
 email = "arimlee270@gmail.com"
 # Meta data
-description = "Personal Portfolio"
-author = "Burton Guster"
+description = "Arim Lee is a Computer Science and Artificial Intelligence undergraduate at Jeonbuk National University, interested in BCI and human-AI interaction."
+author = "Arim Lee"
 favicon = "images/favicon.png"
-google_analytics = "G-ABCDEFG123"
 logo_light = "images/logo.svg"
 logo_dark = "images/logo-dark.svg"
 
