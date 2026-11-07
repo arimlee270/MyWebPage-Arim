@@ -9,7 +9,7 @@
   </div>
   {{ end }} {{ with .Site.Data.content.hero }}
   <div class="hero-image">
-    {{ if ne .mobile_bg_image "" }}
+    {{ if .mobile_bg_image }}
     <img
       class="d-none d-md-block"
       src="{{ .bg_image | relURL }}"
