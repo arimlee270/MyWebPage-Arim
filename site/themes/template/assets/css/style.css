@@ -943,6 +943,12 @@ ul.experience-chart h4 {
   padding: 70px 0px;
 }
 
+.portfolio-holder {
+  max-width: 1440px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .portfolio h1 {
   color: #6f6f6f;
   text-align: center;
@@ -1767,6 +1773,7 @@ ul.experience-chart h4 {
   overflow-x: auto;
   overflow-y: hidden;
   overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
   scroll-padding-inline: 24px;
   scrollbar-width: thin;
@@ -1782,19 +1789,30 @@ ul.experience-chart h4 {
 .og-grid {
   display: flex;
   flex-wrap: nowrap;
-  gap: 18px;
+  gap: 24px;
   width: 100%;
+  box-sizing: border-box;
   padding: 20px 0;
   margin: 0;
   text-align: left;
 }
 
 .og-grid > li {
-  flex: 0 0 calc((100% - 36px) / 3);
+  flex: 0 0 calc((100% - 48px) / 3);
   min-width: 0;
   margin: 0;
   scroll-snap-align: start;
   scroll-snap-stop: always;
+}
+
+.og-grid > li > a {
+  width: 100%;
+}
+
+.og-grid > li > a img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .og-grid > li.og-expanded > a::after {
@@ -1814,17 +1832,15 @@ ul.experience-chart h4 {
 
 @media screen and (max-width: 991px) {
   .og-grid > li {
-    flex-basis: calc((100% - 18px) / 2);
+    flex-basis: calc((100% - 24px) / 2);
   }
+
 }
 
 @media screen and (max-width: 650px) {
-  .portfolio-carousel {
-    padding-right: 24px;
-    padding-left: 24px;
-  }
-
   .og-grid > li {
     flex-basis: 100%;
+    scroll-snap-align: start;
   }
+
 }
