@@ -7,7 +7,7 @@
       alt="{{ .Site.Title }}"
     />
   </div>
-  {{ end }} {{ with .Site.Data.content.hero }}
+  {{ end }} {{ with hugo.Data.content.hero }}
   <div class="hero-image">
     {{ if .mobile_bg_image }}
     <img
