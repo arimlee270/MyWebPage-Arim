@@ -199,7 +199,7 @@ var Grid = (function () {
 
   function initItemsEvents($items) {
     $items
-      .on('click', 'span.og-close', function () {
+      .on('click', 'button.og-close', function () {
         hidePreview();
         return false;
       })
@@ -277,7 +277,9 @@ var Grid = (function () {
       this.$fullimage = $('<div class="og-fullimg"></div>').append(
         this.$loading
       );
-      this.$closePreview = $('<span class="og-close"></span>');
+      this.$closePreview = $(
+        '<button type="button" class="og-close" aria-label="상세 닫기"></button>'
+      );
       this.$previewInner = $('<div class="og-expander-inner"></div>').append(
         this.$closePreview,
         this.$details
