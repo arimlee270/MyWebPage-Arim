@@ -28,6 +28,7 @@
       >
         <div class="head-holder">
           <h1 class="introduction">{{ .title | markdownify | emojify }}</h1>
+          {{ if gt (len .occupations) 1 }}
           <div class="animated-text">
             <strong class="cd-headline clip">
               <span class="cd-words-wrapper">
@@ -38,6 +39,11 @@
               </span>
             </strong>
           </div>
+          {{ else if .occupations }}
+          <div class="animated-text">
+            <strong>{{ index .occupations 0 }}</strong>
+          </div>
+          {{ end }}
           {{ if .button.enable }} {{ with .button }}
           <a class="hireMe button" href="{{ .link }}">{{ .label }}</a>
           {{ end }} {{ end }}
