@@ -23,7 +23,7 @@
 - **정적 사이트 생성:** Hugo. GitHub Actions 배포 워크플로는 Hugo Extended `0.167.0`을 설치합니다.
 - **템플릿 및 콘텐츠:** Hugo Go 템플릿, YAML (`site/data/content.yml`)
 - **스타일 및 상호작용:** CSS, JavaScript, `prefers-reduced-motion` 설정 대응
-- **프런트엔드 라이브러리 및 외부 자산:** Bootstrap 4.5.2, jQuery 3.5.1, Waypoints 4.0.1, Font Awesome 5.10, Hover.css 2.1, Rubik 웹 폰트
+- **프런트엔드 라이브러리 및 외부 자산:** Bootstrap 4.5.2, jQuery 3.5.1, Waypoints 4.0.1, Font Awesome Free 5.15.4, Hover.css 2.1, Rubik 웹 폰트
 - **배포:** GitHub Actions와 GitHub Pages
 
 ## 로컬에서 실행하기
@@ -109,3 +109,15 @@ hugo --minify --destination ../public
 이 사이트는 [Port-Hugo 테마](https://github.com/tylersayshi/port-hugo)를 바탕으로 수정했습니다. 원본 테마의 README는 디자인의 출발점으로 [Somrat](https://github.com/somratpro/somrat)과 포트폴리오 그리드인 [Hugrid](https://github.com/aerohub/hugrid)을 명시하고 있습니다.
 
 저장소의 [`LICENSE`](LICENSE) 및 테마의 [`LICENSE`](site/themes/template/LICENSE)는 MIT License이며, 원본 저작권 표기는 `Copyright (c) 2021 port-hugo`입니다. 원본 테마 안내와 크레딧은 [`site/themes/template/README.md`](site/themes/template/README.md)에서 확인할 수 있습니다.
+
+### 외부 자산과 이미지 출처
+
+CDN 주소와 사용 버전은 [`site/hugo.toml`](site/hugo.toml)에 기록되어 있습니다. 외부 코드·폰트의 원본과 이용 조건은 각 제공자의 안내를 따릅니다.
+
+- Bootstrap 4.5.2 — [원본 저장소 및 MIT License](https://github.com/twbs/bootstrap/tree/v4.5.2)
+- jQuery 3.5.1 — [원본 저장소 및 MIT License](https://github.com/jquery/jquery/blob/3.5.1/LICENSE.txt)
+- Waypoints 4.0.1 — [원본 저장소 및 MIT License](https://github.com/imakewebthings/waypoints/blob/master/licenses.txt)
+- Hover.css 2.1.0 — [원본 저장소와 라이선스 안내](https://github.com/IanLunn/Hover)
+- Font Awesome Free 5.15.4 — [원본 및 라이선스](https://github.com/FortAwesome/Font-Awesome/blob/5.15.4/LICENSE.txt): 코드 MIT, 웹폰트 SIL OFL 1.1, 아이콘 CC BY 4.0. 브랜드 아이콘은 각 브랜드를 나타내는 용도로만 사용합니다.
+- Rubik — [Google Fonts 원본](https://fonts.google.com/specimen/Rubik/about), [SIL Open Font License 1.1](https://github.com/google/fonts/blob/main/ofl/rubik/OFL.txt)
+- 프로필 이미지 `site/static/images/profile.jpg`와 현재 Portfolio 카드에 쓰는 `site/assets/images/portfolio/` 이미지는 AI 생성 이미지입니다. 생성 도구·모델은 확인되지 않았습니다.
