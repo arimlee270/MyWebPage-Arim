@@ -313,26 +313,12 @@ var Grid = (function () {
 
       current = this.$item.index();
 
-      function formatForUrl(str) {
-        return str
-          .replace(/_/g, '-')
-          .replace(/ /g, '-')
-          .replace(/:/g, '-')
-          .replace(/\\/g, '-')
-          .replace(/\//g, '-')
-          .replace(/[^a-zA-Z0-9\-]+/g, '')
-          .replace(/-{2,}/g, '-')
-          .toLowerCase();
-      }
-
       var $itemEl = this.$item.children('a'),
         eldata = {
           href: $itemEl.attr('href'),
           largesrc: $itemEl.data('largesrc'),
           title: $itemEl.data('title'),
-          description: $(
-            `#description-${formatForUrl($itemEl.data('title'))}`
-          ).html(),
+          description: this.$item.children('.hidden').html(),
           github: $itemEl.data('github'),
           demo: $itemEl.data('demo')
         };
