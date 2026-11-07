@@ -258,13 +258,20 @@ var Grid = (function () {
     create: function () {
       this.$title = $('<h3></h3>');
       this.$description = $('<div class="portfolio-description"></div>');
-      this.$href = $(
-        '<a href="#" class="button" target="_blank" rel="noreferrer">{{ .Site.Params.buttontext }}</a>'
+      this.$github = $(
+        '<a href="#" class="button" target="_blank" rel="noreferrer">GITHUB</a>'
+      );
+      this.$demo = $(
+        '<a href="#" class="button" target="_blank" rel="noreferrer">LIVE DEMO</a>'
+      );
+      this.$actions = $('<div class="og-actions"></div>').append(
+        this.$github,
+        this.$demo
       );
       this.$details = $('<div class="og-details"></div>').append(
         this.$title,
         this.$description,
-        this.$href
+        this.$actions
       );
       this.$loading = $('<div class="og-loading"></div>');
       this.$fullimage = $('<div class="og-fullimg"></div>').append(
@@ -317,20 +324,15 @@ var Grid = (function () {
           description: $(
             `#description-${formatForUrl($itemEl.data('title'))}`
           ).html(),
-          buttontext: $itemEl.data('buttontext')
+          github: $itemEl.data('github'),
+          demo: $itemEl.data('demo')
         };
 
       this.$title.html(eldata.title);
       this.$description.html(eldata.description);
-      if (eldata.buttontext) this.$href.text(eldata.buttontext);
-      else this.$href.text('{{ .Site.Params.buttontext }}');
-
-      if (eldata.href) {
-        this.$href.attr('href', eldata.href);
-        this.$href.show();
-      } else {
-        this.$href.hide();
-      }
+      this.setLink(this.$github, eldata.github);
+      this.setLink(this.$demo, eldata.demo);
+      this.$actions.toggle(Boolean(eldata.github || eldata.demo));
 
       var self = this;
 
@@ -353,6 +355,13 @@ var Grid = (function () {
             }
           })
           .attr('src', eldata.largesrc);
+      }
+    },
+    setLink: function ($link, url) {
+      if (url) {
+        $link.attr('href', url).show();
+      } else {
+        $link.hide();
       }
     },
     open: function () {

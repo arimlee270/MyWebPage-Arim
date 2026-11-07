@@ -114,6 +114,8 @@ portfolio:
     - name: TastyTrip
       image: 'images/portfolio/hugo.png'
       url: ''
+      github: 'https://github.com/arimlee270/tastytrip'
+      demo: 'https://tastytrip.onrender.com'
       description: |
         **외국인 관광객을 위한 AI 기반 음식 정보 및 맞춤형 식당 추천 서비스**
 

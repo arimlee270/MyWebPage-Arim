@@ -1658,6 +1658,18 @@ ul.experience-chart h4 {
   font-weight: 500;
 }
 
+.og-actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 8px;
+}
+
+.og-actions .button {
+  margin: 0;
+}
+
 @media screen and (max-width: 650px) {
   .og-expander-inner {
     padding: 52px 22px 24px;
