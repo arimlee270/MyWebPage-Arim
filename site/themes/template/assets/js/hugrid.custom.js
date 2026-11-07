@@ -432,5 +432,15 @@ var Grid = (function () {
   };
 })();
 $(function () {
+  var $portfolioCarousel = $('.portfolio-carousel');
+  var resetPortfolioCarousel = function () {
+    $portfolioCarousel.scrollLeft(0);
+  };
+
+  resetPortfolioCarousel();
+  $(window).on('pageshow.portfolioCarousel', resetPortfolioCarousel);
+  $('#desktop-menu a[href="#portfolio"], .mobile-menu-list a[href="#portfolio"]')
+    .on('click', resetPortfolioCarousel);
+
   Grid.init();
 });
