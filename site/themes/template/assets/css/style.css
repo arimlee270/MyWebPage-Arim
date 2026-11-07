@@ -701,6 +701,21 @@ input:checked + label span:last-child {
   top: 18px;
 }
 
+.mobile-menu-nav .menu-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.mobile-menu-nav .menu-link:focus-visible {
+  outline: 2px solid #6f6f6f;
+  outline-offset: 4px;
+}
+
 .mobile-menu-nav span {
   display: block;
   width: 100%;

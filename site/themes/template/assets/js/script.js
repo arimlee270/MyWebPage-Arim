@@ -189,8 +189,9 @@
   }
 
   // Toggle Mobile Menu
-  $('.mobile-menu a.menu-link').on('click', function () {
-    $('.menu-link').toggleClass('active');
+  $('.mobile-menu button.menu-link').on('click', function () {
+    var isOpen = !$(this).hasClass('active');
+    $(this).toggleClass('active').attr('aria-expanded', isOpen);
     $('.menu-slider').slideToggle(500);
   });
   /*--------------------------------
