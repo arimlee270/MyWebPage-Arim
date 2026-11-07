@@ -52,11 +52,13 @@
             </ul>
             <ul class="mobile-menu-icons list-inline mx-auto">
               {{ range .Site.Params.social }}
+              {{ if .link }}
               <li>
-                <a href="{{ .link | safeURL }}"
-                  ><i class="fab {{ .icon }} fa-2x"></i
+                <a href="{{ .link | safeURL }}" target="_blank" rel="noreferrer" aria-label="{{ .alt }}"
+                  ><i class="{{ .icon }} fa-2x" aria-hidden="true"></i
                 ></a>
               </li>
+              {{ end }}
               {{ end }}
             </ul>
           </nav>
