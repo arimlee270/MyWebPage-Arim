@@ -1649,8 +1649,14 @@ ul.experience-chart h4 {
 }
 
 .og-details .portfolio-description ul {
-  padding-left: 20px;
+  padding-left: 0;
+  list-style-position: inside;
   margin: 0 0 18px;
+}
+
+.og-details .portfolio-description.railab-description ul {
+  list-style: none;
+  padding-left: 0;
 }
 
 .og-details .portfolio-description strong {

@@ -330,6 +330,10 @@ var Grid = (function () {
 
       this.$title.html(eldata.title);
       this.$description.html(eldata.description);
+      this.$description.toggleClass(
+        'railab-description',
+        eldata.title === 'RAI LAB'
+      );
       this.setLink(this.$github, eldata.github);
       this.setLink(this.$demo, eldata.demo);
       this.$actions.toggle(Boolean(eldata.github || eldata.demo));
