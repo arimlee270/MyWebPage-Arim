@@ -7,38 +7,34 @@
 <section class="about-me" id="about">
   <div class="container">
     {{ if .Site.Data.content.about.enable }} {{ with .Site.Data.content.about }}
-    <div class="row about-me-holder">
-      <div
-        class="
-          col-lg-10 col-md-12 col-sm-12
-          about-me-text
-          d-flex
-          align-self-center
-        "
-      >
-        <div class="about-content">
-          {{ .content | markdownify | emojify }}
+    <div class="about-layout">
+      <div class="row about-top">
+        <div class="col-lg-6 col-md-6 col-sm-12 about-me-text">
+          <div class="about-content">
+            {{ .content_top | markdownify | emojify }}
+          </div>
         </div>
-          {{ if .button.enable }} {{ with .button }}
-          <a
-            href="{{ .link | relURL }}"
-            target="_blank"
-            rel="noreferrer"
-            class="button download-cv"
-          >
-            {{ .label }} <i class="fa fa-download"></i
-          ></a>
-          {{ end }} {{ end }}
+        {{ with .image }}
+        <div class="col-lg-6 col-md-6 col-sm-12 about-me-images">
+          <div class="about-photo-frame">
+            <img src="{{ . | relURL }}" alt="프로필 사진" />
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      <div class="about-details-screen">
+        <div class="about-detail-section about-content">
+          {{ .content_bottom_left | markdownify | emojify }}
+        </div>
+        <div class="about-detail-section about-content">
+          {{ .content_bottom_right | markdownify | emojify }}
+        </div>
+        <div class="about-detail-section about-content">
+          {{ .content_full_bottom | markdownify | emojify }}
         </div>
       </div>
-      {{ with .image }}
-      <div class="col-lg-6 col-sm-6 col-9 about-me-images">
-        <img src="{{ . | relURL }}" alt="about-me" />
-      </div>
-      {{ end }}
     </div>
     {{ end }} {{ end }}
-
     <div class="row experience-skill">
       {{ if .Site.Data.content.experience.enable }} {{ with
       .Site.Data.content.experience }}

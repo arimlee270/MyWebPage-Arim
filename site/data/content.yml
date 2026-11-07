@@ -16,35 +16,32 @@ hero:
 
 about:
   enable: true
-  image: ''
+  image: 'images/profile.jpg'
   title: 'ABOUT ME'
-  content: |
-    **Information**
+  content_top: |
+    **THIS IS ME**
 
-    - 이름: 이아림
-    - 학교: 전북대학교
-    - 전공: 컴퓨터인공지능학부
-    - 학년: 3학년
+    I am Arim Lee, a third-year undergraduate student majoring in Computer Science and Artificial Intelligence at Jeonbuk National University. I am currently exploring my academic interests and gaining research experience through my undergraduate studies.
 
+  content_bottom_left: |
     **Research Interests**
 
     - Brain–Computer Interfaces (BCI)
     - Artificial Intelligence (AI)
     - Human–AI Interaction
 
+  content_bottom_right: |
     **Why BCI?**
 
     Neuralink 관련 기술을 조사하면서 BCI에 관심을 갖게 되었습니다.
     특히 뇌와 컴퓨터를 연결하여 신체적 제약을 극복하고
     인간의 삶을 개선하는 기술에 흥미를 느끼고 있습니다.
 
+  content_full_bottom: |
     **Learning Goals & Next Steps**
 
-    BCI와 인공지능 분야의 연구 문제와 접근 방법을
-    깊이 이해하는 것을 목표로 하고 있습니다.
-
-    이를 위해 관련 논문을 지속적으로 읽고 비교하며,
-    선행연구의 한계와 후속 연구 방향을 탐색하고 있습니다.
+    BCI와 인공지능 분야의 연구 문제와 접근 방법을 깊이 이해하는 것을 목표로 하고 있습니다.
+    이를 위해 관련 논문을 지속적으로 읽고 비교하며, 선행연구의 한계와 후속 연구 방향을 탐색하고 있습니다.
 
   button:
     enable: false

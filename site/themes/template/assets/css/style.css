@@ -1387,71 +1387,61 @@ ul.experience-chart h4 {
 ----------------------------------*/
 
 /* =====================================
-   Custom About Me Layout
+   About Me: introduction then one-screen details
 ===================================== */
 
 .about-me {
-  min-height: 100vh;
-  min-height: 100svh;
-  padding: 110px 24px 70px;
-  display: flex;
+  background: #fff;
+  padding: 0;
+  scroll-margin-top: 55px;
+}
+
+.about-top {
   align-items: center;
-  justify-content: center;
-  scroll-margin-top: 0;
-}
-
-.about-me > .container {
-  width: 100%;
-}
-
-.about-me-holder {
-  justify-content: center;
+  min-height: calc(100vh - 55px);
+  min-height: calc(100svh - 55px);
 }
 
 .about-me-text {
-  max-width: 850px;
-  margin: 0 auto;
+  display: block !important;
   padding: 0 15px;
-  text-align: center;
+  text-align: left;
+  align-self: center;
 }
 
-.about-me-text .text-holder {
+.about-content {
   width: 100%;
-  margin: 0 auto;
+  text-align: left;
 }
-
-.about-me-text h1 {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-/* Introduction, Research Interests 등 소제목 */
 
 .about-content strong {
   display: block;
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 700;
   color: #333;
-  margin-top: 34px;
-  margin-bottom: 14px;
+  margin-top: 24px;
+  margin-bottom: 12px;
 }
 
-/* 본문 글씨와 줄 간격 */
+.about-top .about-content > p:first-child strong {
+  color: #6f6f6f;
+  font-size: 34px;
+  letter-spacing: 2px;
+  margin: 0 0 12px;
+}
 
 .about-content p {
-  text-align: center;
+  text-align: left;
   font-size: 16px;
   line-height: 1.9;
   margin-bottom: 12px;
 }
 
-/* 기본 정보 및 관심 분야 목록 */
-
 .about-content ul {
   list-style: none;
   padding-left: 0;
-  margin: 0 auto 18px;
-  text-align: center;
+  margin: 0 0 22px;
+  text-align: left;
 }
 
 .about-content li {
@@ -1459,46 +1449,134 @@ ul.experience-chart h4 {
   line-height: 1.8;
 }
 
-/* 모바일 화면 */
-
-@media (max-width: 767px) {
-  .about-me {
-    padding: 100px 18px 60px;
-  }
-
-  .about-me-text {
-    max-width: 100%;
-    margin-bottom: 0;
-  }
-
-  .about-me-text h1 {
-    font-size: 30px;
-    margin-bottom: 30px;
-  }
-
-  .about-content strong {
-    font-size: 17px;
-    margin-top: 28px;
-  }
-
-  .about-content p,
-  .about-content li {
-    font-size: 15px;
-    line-height: 1.8;
-  }
+.about-me-images {
+  position: relative;
+  min-height: 480px;
 }
 
-.about-me-text {
-  display: block !important;
-  text-align: center;
+.about-photo-frame {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: min(100%, 360px);
+  aspect-ratio: 7 / 9;
 }
 
-.about-content {
+.about-photo-frame img {
+  display: block;
   width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.about-details-screen {
+  min-height: calc(100vh - 55px);
+  min-height: calc(100svh - 55px);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-detail-section {
+  width: 100%;
+  margin: 0 auto 38px;
   text-align: center;
+}
+
+.about-detail-section:last-child {
+  margin-bottom: 0;
+}
+
+.about-detail-section > p:first-child {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.about-detail-section > p:first-child strong {
+  color: #6f6f6f;
+  font-size: 24px;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.about-detail-section p,
+.about-detail-section ul,
+.about-detail-section li {
+  text-align: center;
+}
+
+.about-detail-section ul {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.about-detail-section li {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.about-detail-section li:last-child {
+  margin-bottom: 0;
 }
 
 .download-cv {
-  display: table;
-  margin: 24px auto 0;
+  display: inline-block;
+  margin: 24px 15px 0;
+}
+
+@media (max-width: 767px) {
+  .about-me {
+    scroll-margin-top: 55px;
+  }
+
+  .about-top {
+    min-height: 0;
+    padding-top: 35px;
+  }
+
+  .about-me-text {
+    margin-bottom: 8px;
+  }
+
+  .about-top .about-content > p:first-child strong {
+    font-size: 30px;
+  }
+
+  .about-me-images {
+    height: 410px;
+    min-height: 410px;
+    margin-top: 18px;
+  }
+
+  .about-photo-frame {
+    top: 0;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(100%, 300px);
+  }
+
+  .about-details-screen {
+    min-height: calc(100svh - 55px);
+    padding: 24px 20px;
+  }
+
+  .about-detail-section {
+    margin-bottom: 30px;
+  }
+
+  .about-detail-section > p:first-child strong {
+    font-size: 20px;
+  }
+
+  .about-detail-section li {
+    font-size: 15px;
+  }
 }
