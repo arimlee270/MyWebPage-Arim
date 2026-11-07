@@ -26,6 +26,8 @@
     integrity="{{ $styles.Data.Integrity }}"
     media="screen"
   />
+  {{ $reducedMotionStyles := resources.Get "css/reduced-motion.css" | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $reducedMotionStyles.RelPermalink }}" integrity="{{ $reducedMotionStyles.Data.Integrity }}" media="screen" />
 
   {{ "<!--Favicon-->" | safeHTML }}
 

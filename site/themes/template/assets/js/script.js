@@ -1,10 +1,14 @@
 (function ($) {
   'use strict';
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function animationDuration(duration) {
+    return reducedMotion.matches ? 0 : duration;
+  }
   /*--------------------------------
 	 Start Preloader Animation
 	----------------------------------*/
   $(window).on('load', function () {
-    $('.preloader').fadeOut(100);
+    $('.preloader').fadeOut(animationDuration(100));
   });
 
   /*--------------------------------
@@ -23,6 +27,10 @@
       $('.count').each(function () {
         var $this = $(this),
           countTo = $this.attr('data-count');
+        if (reducedMotion.matches) {
+          $this.text(countTo);
+          return;
+        }
         $({
           countNum: $this.text()
         }).animate(
@@ -77,7 +85,7 @@
               {
                 scrollTop: target.offset().top
               },
-              1000,
+              animationDuration(1000),
               'easeInOutExpo',
               function () {
                 // Callback after animation
@@ -121,7 +129,7 @@
 		----------------------------------*/
   // Toggle Fullscreen Navigation
   $('#burger').on('click', function () {
-    $('.fullscreen-nav-container').slideToggle(300);
+    $('.fullscreen-nav-container').slideToggle(animationDuration(300));
   });
   $('.fullscreen-nav-holder a, .turn-home').on('click', function () {
     $('#burger').trigger('click');
@@ -192,7 +200,7 @@
   $('.mobile-menu button.menu-link').on('click', function () {
     var isOpen = !$(this).hasClass('active');
     $(this).toggleClass('active').attr('aria-expanded', isOpen);
-    $('.menu-slider').slideToggle(500);
+    $('.menu-slider').slideToggle(animationDuration(500));
   });
 
   $('.mobile-menu-list a').on('click', function () {
@@ -217,14 +225,13 @@
         });
       } else if (direction == 'down') {
         $('.skillbar').each(function () {
-          $(this)
-            .find('.skillbar-bar')
-            .animate(
-              {
-                width: jQuery(this).attr('data-percent')
-              },
-              2000
-            );
+          var $bar = $(this).find('.skillbar-bar');
+          var width = $(this).attr('data-percent');
+          if (reducedMotion.matches) {
+            $bar.css('width', width);
+          } else {
+            $bar.animate({ width: width }, 2000);
+          }
         });
       }
     },

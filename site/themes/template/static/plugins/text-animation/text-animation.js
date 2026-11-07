@@ -1,4 +1,13 @@
 jQuery(document).ready(function($){
+	if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+		$('.cd-headline').each(function(){
+			var $words = $(this).find('.cd-words-wrapper b');
+			$words.removeClass('is-visible').css('opacity', 0);
+			$words.first().addClass('is-visible').css('opacity', 1);
+		});
+		return;
+	}
+
 	//set animation timing
 	var animationDelay = 2500,
 		//clip effect 

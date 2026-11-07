@@ -124,6 +124,7 @@ $.fn.imagesLoaded = function (callback) {
 };
 
 var Grid = (function () {
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   var $grid = $('*#og-grid'),
     $items = $grid.children('li'),
     current = -1,
@@ -356,7 +357,9 @@ var Grid = (function () {
             ) {
               self.$loading.hide();
               self.$fullimage.find('img').remove();
-              self.$largeImg = $img.fadeIn(350);
+              self.$largeImg = $img.fadeIn(
+                reducedMotion.matches ? 0 : 350
+              );
               self.$fullimage.append(self.$largeImg);
             }
           })
@@ -376,11 +379,12 @@ var Grid = (function () {
           this.setHeights();
           this.positionPreview();
         }, this),
-        25
+        reducedMotion.matches ? 0 : 25
       );
     },
     close: function () {
       var self = this,
+        skipMotion = reducedMotion.matches,
         onEndFn = function () {
           if (support) {
             self.$previewEl.off(transEndEventName);
@@ -392,7 +396,11 @@ var Grid = (function () {
       setTimeout(
         $.proxy(function () {
           if (typeof this.$largeImg !== 'undefined') {
-            this.$largeImg.fadeOut('fast');
+            this.$largeImg.fadeOut(skipMotion ? 0 : 'fast');
+          }
+          if (skipMotion) {
+            onEndFn.call();
+            return;
           }
           this.$previewEl.css('height', 0);
           this.$previewEl.on(transEndEventName, onEndFn);
@@ -401,7 +409,7 @@ var Grid = (function () {
             onEndFn.call();
           }
         }, this),
-        25
+        skipMotion ? 0 : 25
       );
 
       return false;
@@ -416,17 +424,19 @@ var Grid = (function () {
     },
     positionPreview: function () {
       var previewOffsetT = this.$previewEl.offset().top - scrollExtra;
-      $body.stop().animate({ scrollTop: previewOffsetT - 55 }, settings.speed);
+      $body
+        .stop()
+        .animate(
+          { scrollTop: previewOffsetT - 55 },
+          reducedMotion.matches ? 0 : settings.speed
+        );
     },
     setTransition: function () {
-      this.$previewEl.css(
-        'transition',
-        'height ' + settings.speed + 'ms ' + settings.easing
-      );
-      this.$item.css(
-        'transition',
-        'height ' + settings.speed + 'ms ' + settings.easing
-      );
+      var transition = reducedMotion.matches
+        ? 'none'
+        : 'height ' + settings.speed + 'ms ' + settings.easing;
+      this.$previewEl.css('transition', transition);
+      this.$item.css('transition', transition);
     },
     getEl: function () {
       return this.$previewEl;

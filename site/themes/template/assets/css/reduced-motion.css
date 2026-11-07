@@ -1,0 +1,19 @@
+@media (prefers-reduced-motion: reduce) {
+  html,
+  html:focus-within,
+  body {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+
+  .preloader {
+    display: none !important;
+  }
+}
