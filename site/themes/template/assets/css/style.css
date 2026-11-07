@@ -940,6 +940,26 @@ ul.experience-chart h4 {
   display: none !important;
 }
 
+/* Portfolio card separation */
+.og-grid > li {
+  margin: 12px 9px 8px;
+}
+
+.og-grid > li > a {
+  border-radius: 4px;
+  box-shadow: 0 5px 16px rgba(35, 39, 47, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.og-grid > li > a img {
+  border-radius: 4px;
+}
+
+.og-grid > li:not(.og-expanded) > a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 22px rgba(35, 39, 47, 0.24);
+}
+
 /* ========= 7.2 Start Fun Facts ======= */
 
 .no-js .fun-facts {
