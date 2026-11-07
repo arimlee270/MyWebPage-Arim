@@ -1,6 +1,6 @@
 # Arim Lee | 개인 포트폴리오
 
-전북대학교 컴퓨터공학 및 인공지능 전공 학부생 이아림의 개인 포트폴리오 웹사이트입니다. Home, About Me, Portfolio 섹션으로 구성되어 있으며, 프로젝트 카드를 선택하면 상세 내용을 볼 수 있습니다.
+전북대학교 컴퓨터공학 및 인공지능 전공 학부생 이아림의 개인 포트폴리오 웹사이트입니다. Home, About Me, Portfolio 섹션으로 구성되어 있으며, 포트폴리오 카드에서 활동별 상세 내용을 확인할 수 있습니다.
 
 - **배포 사이트:** [https://arimlee270.github.io/MyWebPage-Arim/](https://arimlee270.github.io/MyWebPage-Arim/)
 - **GitHub 저장소:** [https://github.com/arimlee270/MyWebPage-Arim](https://github.com/arimlee270/MyWebPage-Arim)
@@ -9,10 +9,13 @@
 
 - **Home:** 이름, 전공 분야와 배경 이미지를 보여주는 첫 화면
 - **About Me:** 소개, 연구 관심 분야, BCI에 관심을 갖게 된 이유, 학습 목표
-- **Portfolio:** 프로젝트 카드 및 상세 설명
-  - **TastyTrip:** 외국인 관광객을 위한 AI 기반 음식 정보 및 식당 추천 서비스. GitHub 저장소와 라이브 데모 링크 제공
-  - **RAI Lab:** 전북대학교 RAI Lab 학부연구생 활동
-  - **Coming Soon:** 준비 중인 프로젝트 안내
+- **Portfolio:** 활동 카드를 가로로 넘겨 보고, 카드를 선택해 상세 설명을 펼쳐 볼 수 있습니다. `All`, `Projects`, `Research`, `Competitions` 필터로 활동을 분류합니다.
+  - **TastyTrip:** 외국인 관광객을 위한 AI 기반 음식 정보 및 식당 추천 서비스. `Projects`와 `Competitions`에 표시되며 GitHub 저장소와 라이브 데모 링크를 제공합니다.
+  - **RAI Lab:** 전북대학교 RAI Lab 학부연구생 활동. `Research`에 표시됩니다.
+  - **오픈소스 SW 아이디어 해커톤 캠프:** LLM 기반 감정 해소 서비스 기획 활동. `Competitions`에 표시됩니다.
+  - **제주대학교 부트캠프:** 지도 기반 장소 검색·저장 및 채팅 앱 팀 프로젝트. `Projects`에 표시됩니다.
+  - **Coming Soon:** 준비 중인 프로젝트 안내. `All`에서 확인할 수 있습니다.
+- **화면 및 키보드 조작:** 다크 모드 전환, 키보드로 메뉴와 프로젝트 카드 탐색, Enter로 상세 보기, 닫기 버튼 또는 Esc로 닫기를 지원합니다. 상세 창을 닫으면 포커스가 열었던 카드로 돌아갑니다. 카드와 모바일 메뉴 링크에는 키보드 포커스 표시가 있습니다.
 - **Footer:** GitHub, 뉴스레터, 이메일 주소 복사
 
 ## 사용 기술
