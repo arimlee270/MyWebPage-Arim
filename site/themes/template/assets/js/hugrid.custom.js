@@ -211,12 +211,6 @@ var Grid = (function () {
   function initItemsEvents($items) {
     $items
       .children('a')
-      .on('keydown', function (event) {
-        if (event.key === 'Enter') {
-          event.preventDefault();
-          $(this).trigger('click');
-        }
-      })
       .on('click', function (e) {
         var $item = $(this).parent();
         current === Array.from($items).findIndex((d) => d == $item[0])
