@@ -118,7 +118,7 @@
             {{ .description | markdownify }}
           </div>
           <a
-            href="{{ .url }}"
+            href="{{ if .url }}{{ .url }}{{ else }}#portfolio{{ end }}"
             data-largesrc="{{ $big_image.RelPermalink }}"
             data-title="{{ .name }}"
             data-github="{{ .github }}"
