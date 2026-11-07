@@ -1760,13 +1760,18 @@ ul.experience-chart h4 {
 /* Horizontally scrollable portfolio cards */
 .portfolio-carousel {
   width: 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   overflow-x: auto;
   overflow-y: hidden;
   overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
+  scroll-padding-inline: 24px;
   scrollbar-width: thin;
   scrollbar-color: #999 #eee;
-  padding: 0 12px 14px;
+  padding: 0 24px 14px;
 }
 
 .portfolio-carousel:focus-visible {
@@ -1789,6 +1794,7 @@ ul.experience-chart h4 {
   min-width: 0;
   margin: 0;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .og-grid > li.og-expanded > a::after {
@@ -1814,8 +1820,8 @@ ul.experience-chart h4 {
 
 @media screen and (max-width: 650px) {
   .portfolio-carousel {
-    padding-right: 18px;
-    padding-left: 18px;
+    padding-right: 24px;
+    padding-left: 24px;
   }
 
   .og-grid > li {
