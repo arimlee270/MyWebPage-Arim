@@ -28,7 +28,20 @@
 
 ## 로컬에서 실행하기
 
-먼저 Hugo Extended를 설치합니다. 이 저장소의 GitHub Actions 워크플로는 Hugo Extended `0.167.0`을 사용합니다. 설치 후 저장소 루트에서 아래 명령을 실행합니다.
+### 도구 설치
+
+macOS에서는 Homebrew로 Hugo를 설치할 수 있습니다. 다른 운영체제의 설치 방법은 [Hugo 공식 설치 안내](https://gohugo.io/installation/)를 참고합니다.
+
+```bash
+brew install hugo
+hugo version
+```
+
+`hugo version`에 `extended`가 포함된 Hugo Extended가 필요합니다. GitHub Actions는 Hugo Extended `0.167.0`을 사용하고, 로컬에서 검증한 버전은 `0.169.0+extended`입니다. 새 버전으로도 아래 빌드를 확인했습니다. Dart Sass와 배포용 도구는 GitHub Actions 워크플로가 버전을 지정해 준비합니다.
+
+### 로컬 미리보기
+
+저장소 루트에서 실행합니다.
 
 ```bash
 cd site
@@ -71,6 +84,15 @@ hugo --minify --destination ../public
 ├── LICENSE                            # MIT 라이선스
 └── README.md
 ```
+
+## 파일 수정 후 배포
+
+- 소개와 프로젝트 설명·분류: `site/data/content.yml`
+- 메뉴, 사이트 주소, 외부 링크: `site/hugo.toml`
+- 페이지 구조: `site/themes/template/layouts/`
+- 스타일과 동작: `site/themes/template/assets/css/`, `site/themes/template/assets/js/`
+
+수정한 뒤 저장소 루트에서 변경 파일을 커밋하고 `main`에 push합니다. `main` push가 `Deploy Hugo to GitHub Pages` 워크플로를 자동 실행하므로 저장소의 **Actions** 탭에서 build와 deploy 성공을 확인한 다음 [배포 사이트](https://arimlee270.github.io/MyWebPage-Arim/)를 새로고침합니다. 생성물 `site/public/`은 Git에 올리지 않습니다.
 
 ## GitHub Pages 배포
 
