@@ -13,13 +13,25 @@
     <img
       class="d-none d-md-block"
       src="{{ .bg_image | relURL }}"
-      alt="background"
+      alt=""
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
     /><img
       class="d-md-none"
       src="{{ .mobile_bg_image | relURL }}"
-      alt="background"
-    />{{ else }} <img src="{{ .bg_image | relURL }}" alt="background" />{{ end
-    }}
+      alt=""
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />{{ else }}
+    <img
+      src="{{ .bg_image | relURL }}"
+      alt=""
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />{{ end }}
   </div>
   <div class="container">
     <div class="row content">

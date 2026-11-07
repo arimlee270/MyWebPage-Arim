@@ -17,7 +17,14 @@
         {{ with .image }}
         <div class="col-lg-6 col-md-6 col-sm-12 about-me-images">
           <div class="about-photo-frame">
-            <img src="{{ . | relURL }}?v=arim-profile-20261107" alt="프로필 사진" />
+            <img
+              src="{{ . | relURL }}?v=arim-profile-20261107"
+              alt="프로필 사진"
+              width="941"
+              height="1210"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
         {{ end }}
@@ -138,7 +145,11 @@
             >
               <img
                 src="{{ $sm_image.RelPermalink }}"
-                alt="{{ $parsed_name }} image"
+                alt="{{ .name }}"
+                width="395"
+                height="250"
+                loading="lazy"
+                decoding="async"
               />
             </a>
           </li>

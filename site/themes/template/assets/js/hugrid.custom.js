@@ -151,12 +151,11 @@ var Grid = (function () {
 
   function init(config) {
     settings = $.extend(true, {}, settings, config);
-
-    $grid.imagesLoaded(function () {
-      saveItemInfo(true);
-      getWinSize();
-      initEvents();
-    });
+    // Fixed image dimensions keep card positions stable; bind interactions
+    // immediately so offscreen lazy-loaded cards do not delay the grid.
+    saveItemInfo(true);
+    getWinSize();
+    initEvents();
   }
 
   function addItems($newitems) {

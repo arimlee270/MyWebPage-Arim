@@ -2,7 +2,7 @@
 }}
 <div class="preloader">
   {{ with .Site.Params.preloader.preloader }}
-  <img src="{{ . | relURL }}" alt="preloader" />
+  <img src="{{ . | relURL }}" alt="" />
   {{ end }}
 </div>
 {{ "<!-- preloader end -->" | safeHTML }} {{ end }}
