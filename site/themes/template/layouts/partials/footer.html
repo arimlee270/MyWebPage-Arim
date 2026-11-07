@@ -3,8 +3,8 @@
     {{ range $.Site.Params.social }}
     {{ if .link }}
       <li>
-        <a href="{{ .link | safeURL }}" target="_blank" rel="noreferrer"
-          ><i class="{{ .icon }} footer-icon fa-3x" aria-label="{{ .alt }}" title="{{ .alt }}"></i
+        <a href="{{ .link | safeURL }}" target="_blank" rel="noreferrer" aria-label="{{ .alt }}"
+          ><i class="{{ .icon }} footer-icon fa-3x" aria-hidden="true" title="{{ .alt }}"></i
         ></a>
       </li>
     {{ else if and (eq .alt "Email") $.Site.Params.email }}
